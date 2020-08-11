@@ -1,0 +1,73 @@
+:root {
+    /* Color */
+    --color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #bdbdbd;
+    --color-pink: #fe918d;
+    --color-dark-blue: #00008b;
+    --color-dark-pink: #ff6863;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #616161;
+    --color-light-grey: #7c7979;
+    --color-light-dark-blue: #1d97f6;
+    --color-blue: #73aace;
+    --color-yellow: #fff7d1;
+    --color-orange: #feb546;
+    --color-black: #000000;
+}
+
+body {
+    background: url(../imgs/bg-image.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+h1,
+h2 {
+    font-size: 3em;
+    color: var(--color-dark-grey);
+}
+
+#title {
+    color: var(--color-dark-blue);
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    outline-style: none;
+    font-size: 1.3em;
+}
+
+input {
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: 0.2rem;
+    border-bottom-color: var(--color-orange);
+    font-size: 30px;
+    background-color: transparent;
+    color: var(--color-black);
+}
+
+span {
+    font-size: 2em;
+}
+
+.task_mgt_area {
+    padding-top: 20%;
+    text-align: center;
+}
+
+ul {
+    text-align: center;
+    color: var(--color-dark-blue);
+}
