@@ -11,23 +11,39 @@
 
 <body>
     <section class="task_mgt_area">
-        <section class="task_input_section">
-            <h1 id="title">Stay strong, Be positive!</h1>
-            <h1>Task</h1>
-            <form class="form-task">
-                <input type="text" id="task_text" placeholder="Add task" />
+        <div class="greeting__container"></div>
+        <div class="name__input__section">
+            <img src="imgs/person_icon.png" alt="person_icon" class="icon__person" />
+            <div>Before using task manager, Please register your name :</div>
+            <form class="form-name">
+                <input type="text" id="name_text" placeholder="    Enter your name" />
             </form>
-        </section>
+        </div>
 
-        <section class="pending_task_section">
-            <h2>Pending</h2>
-            <ul class="pending_task_list"></ul>
-        </section>
+        <div class="lock__image">
+            <img src="imgs/lock.png" alt="lock_img" />
+        </div>
+        <div class="container">
+            <section class="task_input_section">
+                <h1 id="title">Stay strong, Be positive!</h1>
+                <h1>Task</h1>
+                <form class="form-task">
+                    <input type="text" id="task_text" placeholder="Add task" />
+                </form>
+            </section>
 
-        <section class="finished_task_section">
-            <h2>Finished</h2>
-            <ul class="finished_task_list"></ul>
-        </section>
+            <div class="task__container">
+                <div class="pending__task">
+                    <h2>Pending</h2>
+                    <ul class="pending_task_list"></ul>
+                </div>
+
+                <div class="finished__task">
+                    <h2>Finished</h2>
+                    <ul class="finished_task_list"></ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script src="js/main.js"></script>

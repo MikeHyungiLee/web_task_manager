@@ -1,24 +1,21 @@
 const task_form = document.querySelector(".form-task"),
     task_text = task_form.querySelector("#task_text"),
     pending_task_list = document.querySelector(".pending_task_list"),
-    finished_task_list = document.querySelector(".finished_task_list");
+    finished_task_list = document.querySelector(".finished_task_list"),
+    name_form = document.querySelector(".form-name"),
+    username_text = name_form.querySelector("#name_text"),
+    lock_container = document.querySelector(".container"),
+    nameInputSection = document.querySelector(".name__input__section"),
+    lockImage = document.querySelector(".lock__image"),
+    greeting_container = document.querySelector(".greeting__container");
 
-// KEY VALUE
 const PENDING_TASK_LS = "pending_task_object",
-    FINISHED_TASK_LS = "finished_task_object";
+    FINISHED_TASK_LS = "finished_task_object",
+    USERNAME_LS = "user_name";
 
 let pending_task_obj_list = [],
     finished_task_obj_list = [];
 
-// (공통화 메소드)Common part painting method
-// paramenter explanation
-// arg[0] arr : pending_task_obj_list = [] , finished_task_obj_list = []
-// arg[1] spanTxt : Text in span tag.
-// arg[2] fBtnTxt : Text in first button.
-// arg[3] fBtnEvtFunc : first Button event function.
-// arg[4] sBtnTxt : Text in second button.
-// arg[5] sBtnEvtFunc : second Button event function.
-// parent list : pending_task_list, finished_task_list
 function paintCommonPartOfList(
     arr,
     spanTxt,
@@ -162,10 +159,44 @@ function loadTaskItem() {
     }
 }
 
+function saveUsername(event) {
+    // event가 증발하는 것을 막기 위해서 preventDefault();처리를 해준다.
+    event.preventDefault();
+    const text = username_text.value;
+    localStorage.setItem(USERNAME_LS, text);
+    nameInputSection.classList.add("invisible");
+    lockImage.classList.add("invisible");
+    // lock__container 클래스 삭제
+    lock_container.classList.remove("lock__container");
+    lock_container.classList.add("unlock__container");
+    const username = localStorage.getItem(USERNAME_LS);
+    greeting_container.textContent = `${username}! Have a good day.`;
+}
+
+function checkUserName() {
+    const username = localStorage.getItem(USERNAME_LS);
+    if (username === null) {
+        lock_container.classList.remove("unlock__container");
+        lock_container.classList.add("lock__container");
+    } else {
+        lock_container.classList.remove("lock__container");
+        lock_container.classList.add("unlock__container");
+        nameInputSection.classList.add("invisible");
+        lockImage.classList.add("invisible");
+        greeting_container.textContent = `${username}! Have a good day.`;
+    }
+}
+
 // init() function
 function init() {
     loadTaskItem();
+    checkUserName();
+    name_form.addEventListener("submit", saveUsername);
     task_form.addEventListener("submit", taskFormEvent);
+    // Local storage의 username을 검사해서 null인 경우, classList.add('lock__container') 추가하고
+    // username이 있는 경우, lock__container를 classList.remove('lock__container') 제거해준다.
+    // 해당 메서드를 init() 메서드에서 처리해준다.
+    // lock__image class를 화면표시에서 제거해준다.
 }
 
 init();
