@@ -11,10 +11,12 @@
 
 <body>
     <section class="task_mgt_area">
-        <div class="js-clock">
-            <h1></h1>
+        <div class="top__container">
+            <div class="js-clock">
+                <h1></h1>
+            </div>
+            <div class="greeting__container"></div>
         </div>
-        <div class="greeting__container"></div>
         <div class="name__input__section">
             <img src="imgs/person_icon.png" alt="person_icon" class="icon__person" />
             <div>Before using task manager, Please register your name :</div>
@@ -27,23 +29,33 @@
             <img src="imgs/lock.png" alt="lock_img" />
         </div>
         <div class="container">
+            <div class="weather_info">
+                <span class="js-weather"></span>
+                <img alt="weather_icon" class="weather_icon" />
+            </div>
+            <div class="geo_info">
+                <span class="location"></span>
+            </div>
             <section class="task_input_section">
-                <h1 id="title">Stay strong, Be positive!</h1>
+                <h2 id="title">Stay strong, Be positive!</h2>
                 <h1>Task</h1>
                 <form class="form-task">
                     <input type="text" id="task_text" placeholder="Add task" />
                 </form>
             </section>
-
             <div class="task__container">
                 <div class="pending__task">
                     <h2>Pending</h2>
-                    <ul class="pending_task_list"></ul>
+                    <div class="pending__list">
+                        <ul class="pending_task_list"></ul>
+                    </div>
                 </div>
 
                 <div class="finished__task">
                     <h2>Finished</h2>
-                    <ul class="finished_task_list"></ul>
+                    <div class="finished__list">
+                        <ul class="finished_task_list"></ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,6 +64,7 @@
     <script src="js/main.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/rand_bg.js"></script>
+    <script src="js/geo_and_weather.js"></script>
 </body>
 
 </html>

@@ -28,7 +28,7 @@ h2 {
 }
 
 #title {
-    color: var(--color-dark-blue);
+    color: var(--color-yellow);
 }
 
 li {
@@ -55,6 +55,7 @@ input {
 
 #name_text {
     border-bottom-color: var(--color-pink);
+    text-align: center;
 }
 
 #task_text {
@@ -155,4 +156,47 @@ ul {
 .greeting__container {
     font-size: 2.3em;
     color: var(--color-dark-pink);
+}
+
+.weather_info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.weather_icon {
+    width: 150px;
+    height: 150px;
+}
+
+.top__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.location {
+    font-size: 23px;
+}
+
+.js-clock {
+    margin-right: 25px;
+}
+
+.pending__list {
+    max-height: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: scroll;
+}
+
+.finished__list {
+    max-height: 500px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: scroll;
 }
