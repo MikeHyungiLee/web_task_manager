@@ -189,14 +189,14 @@ ul {
 }
 
 .pending__list {
-    max-height: 400px;
+    max-height: 350px;
     padding-left: 15px;
     padding-right: 15px;
     overflow: scroll;
 }
 
 .finished__list {
-    max-height: 400px;
+    max-height: 350px;
     padding-left: 15px;
     padding-right: 15px;
     overflow: scroll;
