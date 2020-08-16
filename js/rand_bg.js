@@ -3,7 +3,7 @@ const bg_img = document.querySelector(".js-bg-img");
 const TOTAL_IMG_NUMBER = 10;
 
 function paintImage(imgNum) {
-    bg_img.src = `../../imgs/bg-img/${imgNum + 1}.jpg`;
+    bg_img.src = `/imgs/bg-img/${imgNum + 1}.jpg`;
 }
 
 function getRandomNumber() {
